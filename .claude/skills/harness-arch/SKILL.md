@@ -12,4 +12,4 @@ Read:
 
 Follow those files as the only canonical instructions for this stage.
 
-Do not advance to another stage unless the user explicitly invokes another skill.
+Stage boundary: perform only the work allowed by `prompts/1.arch.md`. After producing the output required by that prompt, stop. For prohibitions, red lines, and next-stage rules, follow `prompts/1.arch.md` and `global.md` exactly.
