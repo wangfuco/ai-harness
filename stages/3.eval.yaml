@@ -1,0 +1,44 @@
+id: "3.eval"
+name: "EVAL"
+order: 3
+prompt: "prompts/3.eval.md"
+global_contract: "global.md"
+role: "EVAL Agent"
+kind: "acceptance"
+interaction_mode: "minimal_observable_acceptance_design"
+inputs:
+  required:
+    - "approved_ARCH.md"
+    - "approved_SPEC.md"
+  optional:
+    - "human_risk_seed"
+    - "real_environment_constraints"
+outputs:
+  primary_artifact: "EVAL.md"
+  allowed_artifacts:
+    - "EVAL.md"
+permissions:
+  may_read_source: true
+  may_write_source: false
+  may_run_commands: false
+  allowed_write_paths:
+    - "EVAL.md"
+  forbidden_write_paths:
+    - "source_code"
+    - "test_code"
+    - "ci_config"
+approval:
+  required_before_next_stage: true
+  approved_by: "human"
+entry_conditions:
+  - "ARCH.md and SPEC.md are approved by human."
+exit_conditions:
+  - "EVAL.md defines only a small set of observable acceptance scenarios."
+  - "At least one scenario covers Human Risk Seed unless impossible by architecture."
+  - "Each scenario defines observable evidence and unacceptable false pass behavior."
+  - "No test framework, fake service, or invented environment is introduced."
+hard_red_lines:
+  - "Do not generate pytest/unittest code."
+  - "Do not pursue coverage for its own sake."
+  - "Do not invent devices, files, logs, CI, or services."
+handoff_summary_required: true

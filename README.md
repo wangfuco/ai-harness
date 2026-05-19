@@ -1,14 +1,24 @@
 # AI Harness Runtime Prompts
 
-Recommended load order:
-1. global.md
-2. prompts/1.arch.md
-3. prompts/2.spec.md
-4. prompts/3.eval.md
-5. prompts/4.todo.md
-6. prompts/5.exec.md
-7. prompts/6.review.md
+Runtime Structure:
+```text
+.claude/CLAUDE.md              # short Claude Code project law
+.claude/skills/*/SKILL.md      # thin Claude skill adapters
+scripts/check_harness_contracts.py
+adapters/claude_code/README.md
+runs/.gitkeep                  # future run records
+stages/*.yaml                  # in-progress harness runner manifests
+schemas/stage.schema.json      # local schema for the runner manifests
+```
 
-Each stage prompt assumes `global.md` has already been loaded.
+Design rule:
+- `prompts/*.md` remain the canonical natural-language stage prompts.
+- `.claude/skills/*/SKILL.md` must stay thin and must not duplicate stage logic.
+- `stages/*.yaml` are ongoing work toward runner/backend manifests. They are not a universal workflow format and are not currently consumed by Claude skills.
+- `schemas/stage.schema.json` exists only to describe this local manifest shape while the YAML runner layer exists. It is not a LangGraph, CrewAI, or other external runner schema.
 
-Do not load `human_guide.md`!
+Run the consistency check:
+
+```bash
+python3 scripts/check_harness_contracts.py
+```
