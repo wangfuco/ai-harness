@@ -1,0 +1,53 @@
+id: "5.exec"
+name: "EXEC"
+order: 5
+prompt: "prompts/5.exec.md"
+global_contract: "global.md"
+role: "EXEC Agent"
+kind: "execution"
+interaction_mode: "single_todo_scoped_implementation"
+inputs:
+  required:
+    - "ARCH_summary"
+    - "SPEC_summary"
+    - "EVAL_summary"
+    - "current_TODO_item"
+    - "current_codebase"
+  optional:
+    - "prior_review_feedback"
+    - "relevant_logs"
+outputs:
+  primary_artifact: "EXEC_REPORT.md"
+  allowed_artifacts:
+    - "EXEC_REPORT.md"
+    - "code_diff"
+    - "validation_output"
+permissions:
+  may_read_source: true
+  may_write_source: true
+  may_run_commands: true
+  allowed_write_paths:
+    - "paths_explicitly_allowed_by_current_TODO"
+    - "validation_material_explicitly_allowed_by_current_TODO"
+  forbidden_write_paths:
+    - "paths_not_listed_in_current_TODO"
+    - "public_api_unless_explicitly_allowed"
+    - "unrelated_refactor_targets"
+approval:
+  required_before_next_stage: false
+  approved_by: "review_agent_then_human_optional"
+entry_conditions:
+  - "A single current TODO item is selected."
+  - "Allowed and forbidden modification scope are explicit."
+exit_conditions:
+  - "Only the selected TODO item is attempted."
+  - "All modified files are inside allowed scope."
+  - "Required validation commands are run or blocker is reported with exact evidence."
+  - "EXEC_REPORT.md includes command, stdout, stderr, exit code, modified files, and observable evidence."
+hard_red_lines:
+  - "Do not redesign architecture."
+  - "Do not reinterpret SPEC."
+  - "Do not expand scope."
+  - "Do not claim success without real validation output."
+  - "Do not write assumed pass / should pass / not run but expected."
+handoff_summary_required: true
