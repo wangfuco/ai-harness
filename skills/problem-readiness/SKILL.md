@@ -9,10 +9,10 @@ Ask only one question at a time to turn the seed consulting problem into a good 
 
 1. Good problem / frame
 - **Use clarity** — makes clear what the work must answer or enable, rather than treating a topic, vague objective, or requested artifact as the problem.
-- **Materiality** — contains only distinctions that could materially change the downstream route.
+- **Materiality** — leaves no unresolved load-bearing variables: if materially different plausible values of an unknown would change the analysis object, feasible option space, model structure or dimensionality, evidence needed, or route to a decision-relevant conclusion, resolve it first. Remaining unknowns may affect the answer, but must fit within the same frame and route.
 - **Falsifiability** — separates facts, current beliefs, and hypotheses; allows the preferred answer and the frame itself to be overturned by evidence.
 - **Option integrity** — does not force a formal option set before the case is understood; preserves credible alternatives and an amend/unknown path where material, without false precision.
-- **Research readiness** — is sufficiently resolved to choose specific first tests; non-blocking unknowns remain research questions rather than framing requirements.
+- **Research readiness** — remaining unknowns can be investigated without changing what is being analyzed or requiring a materially different analysis route.
 
 2. Good agent question
 - **Frame preservation** — **reveals the user's frame rather than imposing one; reduces uncertainty without manufacturing commitment**.
