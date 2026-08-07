@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Readiness"
+  short_description: "Gate plans on load-bearing execution gaps"
+  default_prompt: "Use $design-readiness to assess whether this plan is ready to proceed."
