@@ -1,4 +1,14 @@
 {
   "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
-  "notGrouped": "bottom"
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Readiness gates",
+      "description": "Focused checks for load-bearing gaps before execution.",
+      "skills": [
+        "problem-readiness",
+        "design-readiness"
+      ]
+    }
+  ]
 }

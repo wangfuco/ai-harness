@@ -1,0 +1,4 @@
+interface:
+  display_name: "Problem Readiness"
+  short_description: "Gate problems on load-bearing readiness gaps"
+  default_prompt: "Use $problem-readiness to assess whether this problem and its plan are ready to proceed."
