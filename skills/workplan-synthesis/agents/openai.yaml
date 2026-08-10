@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workplan Synthesis"
+  short_description: "Synthesize testable consulting workplans"
+  default_prompt: "Use $workplan-synthesis to synthesize a concise, testable workplan from this consulting problem."

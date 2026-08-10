@@ -9,6 +9,13 @@
         "problem-readiness",
         "design-readiness"
       ]
+    },
+    {
+      "title": "Consulting workplans",
+      "description": "Synthesize testable workplans from well-framed consulting problems.",
+      "skills": [
+        "workplan-synthesis"
+      ]
     }
   ]
 }
