@@ -20,7 +20,7 @@ Finish each stage as good before advancing to the next.
 
 If a stage exposes a goodness defect in itself or one of the upstream stages, roll back to that stage, correct the defect and restart the pipeline from there.
 
-After all stages has passed, output the synthesized states as one concise consulting workplan.
+After all stages has passed, output the synthesized states as one concise consulting workplan. Do not include a summary in the end.
 
 # Definition of good
 ## 1. M — Governing model
@@ -34,6 +34,7 @@ After all stages has passed, output the synthesized states as one concise consul
 ## 3. H — Hypothesis
 * **Falsifiability** — no H remains that lacks a possible state of the world in which it is false.
 * **Answer-state exactness** — no materially distinct answer state that could change the SQ answer remains outside the H set, and no H remains whose truth or falsity cannot materially distinguish the SQ answer. Explicitly name rival hypotheses only where observationally confusable alternatives could lead to materially different answers.
+* **Kill priority** — no unresolved test with greater potential to change the final decision remains behind a lower-impact test.
 
 ## 4. T — Test
 * **Observable adjudication** — no test remains whose required observation is undefined, or whose possible observations cannot be mapped in advance to **H answer states / inconclusive**.
