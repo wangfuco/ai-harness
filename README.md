@@ -6,6 +6,8 @@ A lightweight, universal agent skill suite for deciding whether a problem or des
 
 `workplan-synthesis` converts a good consulting problem into a concise workplan comprising a governing model, MECE subquestions, falsifiable hypotheses, and predeclared adjudicating tests.
 
+`evidence-research` builds a traceable evidence base for assigned hypotheses and tests through source quality checks, adaptive research, critical examination, and calibrated handoff. It leaves material modeling to Analysis and final adjudication to the Case Lead.
+
 `problem-readiness` is derived from and pays tribute to Rkamirage's [`frame-challenge.md`](https://github.com/Rkamirage/consulting-research-to-output/blob/main/skills/run-consulting-research-to-output/references/frame-challenge.md) in the excellent [Consulting Research to Output](https://github.com/Rkamirage/consulting-research-to-output) skill suite.
 
 The skill is not based on `grill-me`. It practices the same spirit: test a plan against the realities of execution, surface consequential uncertainty early, and prevent downstream work from collapsing because foundational decisions were left unresolved.
@@ -20,7 +22,7 @@ Install with the Skills CLI:
 npx skills add wangfuco/ai-harness
 ```
 
-Or copy [`skills/design-readiness`](skills/design-readiness/), [`skills/problem-readiness`](skills/problem-readiness/), or [`skills/workplan-synthesis`](skills/workplan-synthesis/) into the skills directory used by your agent.
+Or copy [`skills/design-readiness`](skills/design-readiness/), [`skills/problem-readiness`](skills/problem-readiness/), [`skills/workplan-synthesis`](skills/workplan-synthesis/), or [`skills/evidence-research`](skills/evidence-research/) into the skills directory used by your agent.
 
 ## Use
 
@@ -53,6 +55,16 @@ The skill returns one concise workplan containing:
 - `H` — hypotheses
 - `T` — tests
 
+For evidence research:
+
+```text
+Use $evidence-research to build a traceable evidence base for these assigned hypotheses and tests:
+
+[paste the hypotheses, tests, and their criteria]
+```
+
+The skill returns a traceable synthesis of supporting and contradicting evidence, unresolved conflicts, limitations, and remaining uncertainty. It assesses each assigned test as supported, refuted, or inconclusive.
+
 The readiness skills return exactly one of:
 
 - `FACTS_NEEDED`
@@ -68,6 +80,10 @@ Each verdict includes a short explanation. The skill reads available local files
 ```text
 skills/
 ├── design-readiness/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
+├── evidence-research/
 │   ├── SKILL.md
 │   └── agents/
 │       └── openai.yaml

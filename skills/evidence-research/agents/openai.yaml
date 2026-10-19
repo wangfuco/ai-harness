@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Research"
+  short_description: "Research traceable evidence for assigned tests"
+  default_prompt: "Use $evidence-research to build a traceable evidence base for these assigned hypotheses and tests."
